@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace sisCaptJAPAC\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

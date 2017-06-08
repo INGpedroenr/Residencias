@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace sisCaptJAPAC\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
