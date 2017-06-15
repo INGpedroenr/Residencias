@@ -1,13 +1,14 @@
-analisis
-especificacion
-diseño del sistema
-diseño del modelo de datos
-elaboracion de diseño de proceso de negocios
-desarrollo 
-implementacion	
-pruebas de software
-entrega del proyecto
-Elaboracion de Informe Final
+Seguimiento del Proyecto
+1.-analisis
+2.-especificacion
+3.-diseño del sistema
+4.-diseño del modelo de datos
+5.-elaboracion de diseño de proceso de negocios
+6.-desarrollo 
+7.-implementacion	
+8.-pruebas de software
+9.-entrega del proyecto
+10.-elaboracion de Informe Final
 
 
 Modelo de dominio
