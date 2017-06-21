@@ -15,12 +15,17 @@ class CreateTableEstablecimiento extends Migration
     {
         Schema::create('establecimiento', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_establecimiento', 100)->nullable;
-            $table->string('password', 50);
-            $table->string('nombre', 50);
-            $table->string('apellido', 50);
-            $table->string('departamento', 50);
-            $table->string('puesto', 50);
+            $table->string('nombre_establecimiento', 100);
+            $table->string('razon_social', 10);
+            $table->string('actividad', 30);
+            $table->string('calle', 100);
+            $table->integer('num_interior')->nullable;
+            $talbe->string('num_exterior')->nullable;
+            $table->string('colonia', 100);
+            $talbe->integer('codigo_postal');
+            $table->string('telefono', 15);
+            $table->integer('num_medidor')->nullable;
+            $table->integer('cuenta')->nullable;
             $table->string('correo_electronico', 50)->unique();
             $table->rememberToken();
             $table->timestamps();
