@@ -18,6 +18,7 @@ class CreateTableResolutivoAdministrativo extends Migration
             $table->dateTime('fecha_programacion')->nullable;
             $table->dateTime('fecha_resolutivo')->nullable;
             $table->decimal('num_meses_cobrar', 11,2)->nullable;
+			$table->string('numresolutivo_administrativo', 30)->nullable;
             $table->string('num_oficioRA', 30)->nullable;
             $talbe->integer('establecimiento_id');
             $table->intiger('visita_inspeccion_id');

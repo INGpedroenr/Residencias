@@ -16,7 +16,8 @@ class CreateTableEstablecimiento extends Migration
         Schema::create('establecimiento', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre_establecimiento', 100);
-            $table->string('razon_social', 30);
+            $table->string('razon_social', 100);
+			$table->string('rfc', 30);
             $table->string('actividad', 30);
             $table->string('calle', 100);
             $table->integer('num_interior')->nullable;
