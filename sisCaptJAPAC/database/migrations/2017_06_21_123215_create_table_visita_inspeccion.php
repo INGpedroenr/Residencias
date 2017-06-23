@@ -17,7 +17,7 @@ class CreateTableVisitaInspeccion extends Migration
             $table->increments('id');
             $table->string('numvisita_inspeccion', 25);
             $table->dateTime('fechavisita_inspeccion');
-            $table->string('num_oficioVI', 50);
+            $table->string('num_oficioVI', 30);
             $table->integer('descarga')->nullable;
             $table->boolean('trampa_gya')->nullable;
             $table->boolean('trampa_sst')->nullable};
@@ -28,9 +28,11 @@ class CreateTableVisitaInspeccion extends Migration
             $table->boolean('empresa_nueva')->nullable;
             $talbe->integer('establecimiento_id');
             --Referencias
-            $table->foreign('establcimiento')->references('establecimiento_id')->on('id');
+            $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
             $table->rememberToken();
             $table->timestamps();
+            });
+
     }
 
     /**
@@ -40,6 +42,6 @@ class CreateTableVisitaInspeccion extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('visita_inspeccion');
     }
 }

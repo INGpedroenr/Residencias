@@ -17,16 +17,17 @@ class CreateTableResultadosLabExternos extends Migration
             $table->increments('id');
             $table->dateTime('fechaentrega_estudios');
             $table->integer('descargas_rle')->nullable;
-            $table->string('laboratorio')->nullable;
+            $table->string('laboratorio', 30)->nullable;
             $table->decimal('dbo_rle', 11,2);
             $table->decimal('sst_rle', 11,2);
             $table->decimal('gya_rle', 11,2);
             $table->integer('status')->nullable;
             $talbe->integer('establecimiento_id');
             --Referencias
-            $table->foreign('establcimiento')->references('establecimiento_id')->on('id');
+            $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
             $table->rememberToken();
             $table->timestamps();
+        });
     }
 
     /**
@@ -36,6 +37,6 @@ class CreateTableResultadosLabExternos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('resultados_lab_externos');
     }
 }

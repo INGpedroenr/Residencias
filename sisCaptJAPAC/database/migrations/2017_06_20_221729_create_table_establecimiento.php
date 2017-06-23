@@ -16,19 +16,20 @@ class CreateTableEstablecimiento extends Migration
         Schema::create('establecimiento', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre_establecimiento', 100);
-            $table->string('razon_social', 10);
+            $table->string('razon_social', 30);
             $table->string('actividad', 30);
             $table->string('calle', 100);
             $table->integer('num_interior')->nullable;
-            $talbe->string('num_exterior')->nullable;
+            $talbe->string('num_exterior', 7)->nullable;
             $table->string('colonia', 100);
             $talbe->integer('codigo_postal');
             $table->string('telefono', 15);
             $table->integer('num_medidor')->nullable;
             $table->integer('cuenta')->nullable;
-            $table->string('correo_electronico', 50)->unique();
+            $table->string('correo_electronico', 50);
             $table->rememberToken();
             $table->timestamps();
+        });
     }
 
     /**
@@ -38,6 +39,6 @@ class CreateTableEstablecimiento extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('establecimiento');
     }
 }

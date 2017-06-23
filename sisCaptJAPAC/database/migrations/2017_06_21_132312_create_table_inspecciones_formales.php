@@ -13,7 +13,7 @@ class CreateTableInspeccionesFormales extends Migration
      */
     public function up()
     {
-            Schema::create('inspecciones_formales', function (Blueprint $table) {
+            Schema::create(('inspecciones_formales', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('establecimiento_id');
             $table->integer('visita_inspeccion_id');
@@ -23,15 +23,16 @@ class CreateTableInspeccionesFormales extends Migration
             $table->integer('resultados_lab_externos_id');
             $table->integer('ip_lab_externos_id');
             --Referencias
-            $table->foreign('establcimiento')->references('establecimiento_id')->on('id');
-            $table->foreign('visita_inspeccion')->references('visita_inspeccion_id')->on('id');
-            $table->foreign('inicio_procedimiento')->references('inicio_procedimiento_id')->on('id');
-            $table->foreign('resolutivo_administrativo')->references('resolutivo_administrativo_id')->on('id');
-            $table->foreign('calculoindice_incumplimiento')->references('calculoindice_incumplimiento_id')->on('id');
-            $table->foreign('resultados_lab_externos')->references('resultados_lab_externos_id')->on('id');
-            $table->foreign('ip_lab_externos')->references('ip_lab_externos_id')->on('id');
+            $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
+            $table->foreign('visita_inspeccion_id')->references('id')->on('visita_inspeccion');
+            $table->foreign('inicio_procedimiento_id')->references('id')->on('inicio_procedimiento');
+            $table->foreign('resolutivo_administrativo_id')->references('id')->on('resolutivo_administrativo');
+            $table->foreign('calculoindice_incumplimiento_id')->references('id')->on('calculoindice_incumplimiento_id');
+            $table->foreign('resultados_lab_externos_id')->references('id')->on('resultados_lab_externos');
+            $table->foreign('ip_lab_externos_id')->references('id')->on('ip_lab_externos');
             $table->rememberToken();
             $table->timestamps();
+        });
     }
 
     /**
@@ -41,6 +42,6 @@ class CreateTableInspeccionesFormales extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('inspecciones_formales');
     }
 }

@@ -17,7 +17,7 @@ class CreateTableInspeccionesInformales extends Migration
             $table->increments('id');
             $table->dateTime('fecha_inspeccion_informal');
             $table->integer('num_infraccion');
-            $table->string('nombre_establecimiento', 100);
+            $table->string('nombre_establecimiento');
             $table->string('calle', 100);
             $table->integer('num_exterior')->nullable;
             $table->string('num_interior', 7)->nullable;
@@ -32,9 +32,10 @@ class CreateTableInspeccionesInformales extends Migration
             $table->integer('num_inspector')->nullable;
             $table->string('motivo_insfraccion', 100);
             $table->string('observaciones', 500);
-            $table->string('elaboro', 50)
+            $table->string('elaboro',50);
             $table->rememberToken();
             $table->timestamps();
+        });
     }
 
     /**
@@ -44,6 +45,6 @@ class CreateTableInspeccionesInformales extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('inspecciones_informales');
     }
 }

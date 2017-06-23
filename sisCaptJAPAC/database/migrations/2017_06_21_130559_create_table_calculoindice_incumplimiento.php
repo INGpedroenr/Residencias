@@ -29,11 +29,12 @@ class CreateTableCalculoindiceIncumplimiento extends Migration
             $table->integer('inicio_procedimiento_id');
             $table->integer('ip_lab_externos_id');
             --Referencias
-            $table->foreign('establcimiento')->references('establecimiento_id')->on('id');
-            $table->foreign('inicio_procedimiento')->references('inicio_procedimiento_id')->on('id');
-            $table->foreign('ip_lab_externos')->references('ip_lab_externos_id')->on('id');
+            $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
+            $table->foreign('inicio_procedimiento_id')->references('id')->on('inicio_procedimiento');
+            $table->foreign('ip_lab_externos_id')->references('id')->on('ip_lab_externos');
             $table->rememberToken();
             $table->timestamps();
+        });
     }
 
     /**
@@ -43,6 +44,6 @@ class CreateTableCalculoindiceIncumplimiento extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('calculoindice_incumplimiento');
     }
 }

@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('apellido', 50);
             $table->string('departamento', 50);
             $table->string('puesto', 50);
-            $table->string('correo_electronico', 50)->unique();
+            $table->string('correo_electronico', 50);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -25,13 +25,14 @@ class CreateTableResolutivoAdministrativo extends Migration
             $table->integer('calculoindice_incumplimiento_id');
             $table->integer('ip_lab_externos_id');
             --Referencias
-            $table->foreign('establcimiento')->references('establecimiento_id')->on('id');
-            $table->foreign('visita_inspeccion')->references('visita_inspeccion_id')->on('id');
-            $table->foreign('inicio_procedimiento')->references('inicio_procedimiento_id')->on('id');
-            $table->foreign('calculoindice_incumplimiento')->references('calculoindice_incumplimiento_id')->on('id');
-            $table->foreign('ip_lab_externos')->references('ip_lab_externos_id')->on('id');
+            $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
+            $table->foreign('visita_inspeccion_id')->references('id')->on('visita_inspeccion');
+            $table->foreign('inicio_procedimiento_id')->references('id')->on('inicio_procedimiento');
+            $table->foreign('calculoindice_incumplimiento_id')->references('id')->on('calculoindice_incumplimiento');
+            $table->foreign('ip_lab_externos_id')->references('id')->on('ip_lab_externos');
             $table->rememberToken();
             $table->timestamps();
+        });
     }
 
     /**
@@ -41,6 +42,6 @@ class CreateTableResolutivoAdministrativo extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('resolutivo_administrativo');
     }
 }

@@ -25,10 +25,11 @@ class CreateTableInicioProcedimiento extends Migration
             $talbe->integer('establecimiento_id');
             $table->intiger('visita_inspeccion_id');
             --Referencias
-            $table->foreign('establcimiento')->references('establecimiento_id')->on('id');
-            $table->foreign('visita_inspeccion')->references('visita_inspeccion_id')->on('id');
+            $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
+            $table->foreign('visita_inspeccion_id')->references('id')->on('visita_inspeccion');
             $table->rememberToken();
             $table->timestamps();
+        });
     }
 
     /**
@@ -38,6 +39,6 @@ class CreateTableInicioProcedimiento extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('incio_procedimiento');
     }
 }
