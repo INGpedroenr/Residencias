@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -25,7 +25,7 @@ class CreateTableResolutivoAdministrativo extends Migration
             $table->integer('inicio_procedimiento_id');
             $table->integer('calculoindice_incumplimiento_id');
             $table->integer('ip_lab_externos_id');
-            --Referencias
+            //Referencias
             $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
             $table->foreign('visita_inspeccion_id')->references('id')->on('visita_inspeccion');
             $table->foreign('inicio_procedimiento_id')->references('id')->on('inicio_procedimiento');

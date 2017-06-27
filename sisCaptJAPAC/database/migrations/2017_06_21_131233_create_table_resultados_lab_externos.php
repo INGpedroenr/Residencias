@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -23,7 +23,7 @@ class CreateTableResultadosLabExternos extends Migration
             $table->decimal('gya_rle', 11,2);
             $table->integer('status')->nullable;
             $talbe->integer('establecimiento_id');
-            --Referencias
+            //Referencias
             $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
             $table->rememberToken();
             $table->timestamps();

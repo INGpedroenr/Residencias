@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -13,7 +13,7 @@ class CreateTableInspeccionesFormales extends Migration
      */
     public function up()
     {
-            Schema::create(('inspecciones_formales', function (Blueprint $table) {
+            Schema::create('inspecciones_formales', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('establecimiento_id');
             $table->integer('visita_inspeccion_id');
@@ -22,7 +22,7 @@ class CreateTableInspeccionesFormales extends Migration
             $table->integer('calculoindice_incumplimineto_id');
             $table->integer('resultados_lab_externos_id');
             $table->integer('ip_lab_externos_id');
-            --Referencias
+            //Referencias
             $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
             $table->foreign('visita_inspeccion_id')->references('id')->on('visita_inspeccion');
             $table->foreign('inicio_procedimiento_id')->references('id')->on('inicio_procedimiento');

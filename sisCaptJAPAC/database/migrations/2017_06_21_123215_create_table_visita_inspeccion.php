@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -13,7 +13,8 @@ class CreateTableVisitaInspeccion extends Migration
      */
     public function up()
     {
-        Schema::create('visita_inspeccion', function (Blueprint $table) {
+        Schema::create('visita_inspeccion', function (Blueprint $table)
+		{
             $table->increments('id');
             $table->string('numvisita_inspeccion', 25);
             $table->dateTime('fechavisita_inspeccion');
@@ -27,7 +28,7 @@ class CreateTableVisitaInspeccion extends Migration
             $table->string('obeservaciones', 500)->nullable;
             $table->boolean('empresa_nueva')->nullable;
             $talbe->integer('establecimiento_id');
-            --Referencias
+            //Referancias
             $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
             $table->rememberToken();
             $table->timestamps();

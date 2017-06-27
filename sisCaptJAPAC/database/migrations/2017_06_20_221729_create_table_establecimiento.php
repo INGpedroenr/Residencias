@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -13,7 +13,8 @@ class CreateTableEstablecimiento extends Migration
      */
     public function up()
     {
-        Schema::create('establecimiento', function (Blueprint $table) {
+        Schema::create('establecimiento', function (Blueprint $table) 
+		{
             $table->increments('id');
             $table->string('nombre_establecimiento', 100);
             $table->string('razon_social', 100);

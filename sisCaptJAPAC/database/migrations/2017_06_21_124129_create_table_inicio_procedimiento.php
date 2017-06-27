@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -13,7 +13,8 @@ class CreateTableInicioProcedimiento extends Migration
      */
     public function up()
     {
-        Schema::create('incio_procedimiento', function (Blueprint $table) {
+        Schema::create('incio_procedimiento', function (Blueprint $table) 
+		{
             $table->increments('id');
             $table->string('laboratorio', 30);
             $table->decimal('dbo', 11,2);
@@ -24,7 +25,7 @@ class CreateTableInicioProcedimiento extends Migration
             $table->dateTime('fecha_recibidoIP')->nullable;
             $talbe->integer('establecimiento_id');
             $table->intiger('visita_inspeccion_id');
-            --Referencias
+            //Referencias
             $table->foreign('establecimiento_id')->references('id')->on('establecimiento');
             $table->foreign('visita_inspeccion_id')->references('id')->on('visita_inspeccion');
             $table->rememberToken();
