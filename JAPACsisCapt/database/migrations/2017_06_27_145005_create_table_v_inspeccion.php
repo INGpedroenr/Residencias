@@ -23,7 +23,7 @@ class CreateTableVInspeccion extends Migration
             $table->boolean('trampa_gya')->nullable;
             $table->boolean('trampa_sst')->nullable;
             $table->string('num_permiso', 25)->nullable;
-            $table->dateTime('fehcaemision_permiso')->nullable;
+            $table->dateTime('fechaemision_permiso')->nullable;
             $table->integer('status')->nullable;
             $table->string('obeservaciones', 500)->nullable;
             $table->boolean('empresa_nueva')->nullable;

@@ -5,8 +5,12 @@ namespace JAPACsisCapt;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Users extends Authenticatable
 {
+    protected $table='users';
+    protected $primaryKey='id';
+    public $timestamps=false;
+
     use Notifiable;
 
     /**
@@ -14,8 +18,15 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    protected $fillable =
+    [
+        'usuario',
+        'password',
+        'nombre',
+        'apellido',
+        'departamento',
+        'puesto',
+        'corre_electronico',
     ];
 
     /**

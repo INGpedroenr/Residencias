@@ -31,7 +31,7 @@ class CreateTableIInformales extends Migration
             $table->string('hora', 25);
             $table->string('nombre_inspector', 100)->nullable;
             $table->integer('num_inspector')->nullable;
-            $table->string('motivo_insfraccion', 100);
+            $table->string('motivo_infraccion', 100);
             $table->string('observaciones', 500);
             $table->string('elaboro', 50);
             $table->rememberToken();
