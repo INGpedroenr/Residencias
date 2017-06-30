@@ -9,7 +9,7 @@
     <div id="app" v-cloak>
         <div class="login-box">
             <div class="login-logo">
-                <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+                <a href="{{ url('/home') }}"><b>¡Bienvenido!</b>Sistema de Captura de JAPAC </a></b>Subgerencia de Saneamiento y Calidad Ambiental </a>
             </div><!-- /.login-logo -->
 
             @if (count($errors) > 0)

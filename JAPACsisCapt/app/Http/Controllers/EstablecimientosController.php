@@ -42,25 +42,39 @@ class EstablecimientosController extends Controller
     	$establecimientos->colonia=$request->get('colonia');
     	$establecimientos->codigo_postal=$request->get('codigo_postal');
     	$establecimientos->telefono=$request->get('telefono');
-    	$establecimientos->nombre_establecimiento=$request->get('nombre_establecimiento');
-    	$establecimientos->num_medidor=$request->get('num_medidor');
+        $establecimientos->num_medidor=$request->get('num_medidor');
     	$establecimientos->cuenta=$request->get('cuenta');
     	$establecimientos->correo_electronico=$request->get('correo_electronico');
     	$establecimientos->save();
     	return Redirect::to(establecimientos);
 
     }
-    public function show (id) 
+    public function show ($id) 
     {
     	return view ("establecimientos.show,"["establecimientos"=>Establecimientos::findOrFail($id)]);
     }
-    public function edit ()
+    public function edit ($id)
     {
-    	return view ("establecimientos.show,"["establecimientos"=>Establecimientos::findOrFail($id)]);
+    	return view ("establecimientos.edit,"["establecimientos"=>Establecimientos::findOrFail($id)]);
     }
-    public function update ()
+    public function update (EstablecimientosFormRequest $request,$id)
     {
-
+        $establecimientos=Establecimientos::findOrFail($id);
+        $establecimientos->nombre_establecimiento=$request->get('nombre_establecimiento');
+        $establecimientos->razon_social=$request->get('razon_social');
+        $establecimientos->rfc=$request->get('rfc');
+        $establecimientos->actividad=$request->get('actividad');
+        $establecimientos->calle=$request->get('calle');
+        $establecimientos->num_exterior=$request->get('num_exterior');
+        $establecimientos->num_interior=$request->get('num_interior');
+        $establecimientos->colonia=$request->get('colonia');
+        $establecimientos->codigo_postal=$request->get('codigo_postal');
+        $establecimientos->telefono=$request->get('telefono');
+        $establecimientos->num_medidor=$request->get('num_medidor');
+        $establecimientos->cuenta=$request->get('cuenta');
+        $establecimientos->correo_electronico=$request->get('correo_electronico');
+        $establecimientos->update();
+        return Redirect::to(Establecimientos);
     }
     public function destroy ()
     {
