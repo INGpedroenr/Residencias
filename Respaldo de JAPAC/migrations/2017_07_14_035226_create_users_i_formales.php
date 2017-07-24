@@ -19,15 +19,11 @@ class CreateUsersIFormales extends Migration
             $table->integer('v_inspeccion_id')->unsigned();
             $table->integer('i_procedimiento_id')->unsigned();
             $table->integer('r_administrativo_id')->unsigned();
-            $table->integer('ci_incumplimineto_id')->unsigned();
-            $table->integer('rl_externos_id')->unsigned();
-            $table->integer('ipl_externos_id')->unsigned();
             //Referencias
             $table->foreign('establecimientos_id')->references('id')->on('establecimientos');
             $table->foreign('v_inspeccion_id')->references('id')->on('v_inspeccion');
             $table->foreign('i_procedimiento_id')->references('id')->on('i_procedimiento');
             $table->foreign('r_administrativo_id')->references('id')->on('r_administrativo');
-            $table->foreign('ci_incumplimiento_id')->references('id')->on('ci_incumplimiento');
             
             $table->rememberToken();
             $table->timestamps();
